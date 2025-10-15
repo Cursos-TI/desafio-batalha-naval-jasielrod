@@ -23,11 +23,11 @@ typedef struct {
 
 void clear_screen(){
 
-    printf("\033[2J\033[H");
+    printf("\033[2J\033[H");  //função para limpar a tela, semelhante ao comando cls 
 }
 
 void pause_enter(){
-    printf("\nPressione ENTER para continuar...");
+    printf("\nPressione ENTER para continuar..."); //função para pausa e continua após teclar enter
     while (getchar()!='\n');
 }
 
@@ -385,7 +385,7 @@ void player_take_shots(Board *enemy, int shots, int *player_points){
         if(res==-1){ printf("Você já atirou nessa posição. Tente outra.\n"); pause_enter(); continue; }
         if(res==0){ printf("Você errou em %c%d.\n", 'A'+c, r); pause_enter(); shots--; }
         else if(res==1){ printf("Você acertou em %c%d!\n", 'A'+c, r); (*player_points) += 1; pause_enter(); shots--; }
-        else if(res==2){ printf("Você afundou um navio em %c%d! +bônus\n", 'A'+c, r); (*player_points) += 1 + 2; pause_enter(); shots--; }
+        else if(res==2){ printf("Você afundou um navio em %c%d! +BONUS\n", 'A'+c, r); (*player_points) += 1 + 2; pause_enter(); shots--; }
     }
 }
 
@@ -473,7 +473,7 @@ void game_loop(){
             if(res==-1){ printf("Você já atirou nessa posição.\n"); pause_enter(); continue; }
             if(res==0){ printf("Você errou em %c%d.\n", 'A'+cc, rr); shots--; pause_enter(); }
             else if(res==1){ printf("Você acertou em %c%d!\n", 'A'+cc, rr); player_points += 1; shots--; pause_enter(); }
-            else if(res==2){ printf("Você afundou um navio em %c%d! Bônus de 2 pontos.\n", 'A'+cc, rr); player_points += 1 + 2; shots--; pause_enter(); }
+            else if(res==2){ printf("Você afundou um navio em %c%d!  BONUS de 2 pontos.\n", 'A'+cc, rr); player_points += 1 + 2; shots--; pause_enter(); }
 
             int anyComputerLeft = ships_remaining(&computer);
             if(!anyComputerLeft) { r=4; break; }
@@ -502,19 +502,39 @@ void game_loop(){
 
 void show_main_menu(){
     clear_screen();
-    printf("=========================================\n");
-    printf("        B A T A L H A   N A V A L\n");
-    printf("=========================================\n\n");
+
+    printf("\n\n\n██████╗  █████╗ ████████╗ █████╗ ██╗     ██╗  ██╗ █████╗\n");        
+    printf("██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██║     ██║  ██║██╔══██╗\n");       
+    printf("██████╔╝███████║   ██║   ███████║██║     ███████║███████║\n");       
+    printf("██╔══██╗██╔══██║   ██║   ██╔══██║██║     ██╔══██║██╔══██║\n");       
+    printf("██████╔╝██║  ██║   ██║   ██║  ██║███████╗██║  ██║██║  ██║\n");       
+    printf("╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝\n\n\n");
+    printf("              __/___                          \n");          
+    printf("        _____/______|            	    \n");
+    printf("_______/_____\_______\_____            \n"); 
+    printf("\\                         |    \n");
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     \n\n\n");
+    printf("   	███╗   ██╗ █████╗ ██╗   ██╗ █████╗ ██╗\n");     
+    printf("	████╗  ██║██╔══██╗██║   ██║██╔══██╗██║\n");     
+    printf("	██╔██╗ ██║███████║██║   ██║███████║██║\n");     
+    printf("	██║╚██╗██║██╔══██║╚██╗ ██╔╝██╔══██║██║\n");     
+    printf("	██║ ╚████║██║  ██║ ╚████╔╝ ██║  ██║███████╗\n");
+    printf("	╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝\n\n\n\n");
+
+    printf("~~~~~ ~ ~ ~~~~~~ ~ ~ ~~~~~~~ ~ ~ ~~~~~~~\n");
+    printf("   J O G O  B A T A L H A   N A V A L\n");
+    printf("~~~ ~ ~ ~~~~~~~ ~ ~ ~~~~~~~ ~ ~ ~~~~~~~~\n\n");
     printf(" 1 - COMECAR\n");
     printf(" 2 - TUTORIAL (COMO JOGAR)\n");
     printf(" 3 - SAIR\n\n");
-    printf("OPCAO: ");
+    printf("OPCAO >> ");
 }
+
 
 void show_records(){
     clear_screen();
     printf("=== Registros / Como posicionar ===\n\n");
-    printf("Os navios são: 1 Porta-Avião (4), 1 Encouraçado (3), 2 cruzadores (2).\n");
+    printf("Os navios são: \n\n [1] Porta-Avião \n    * Ocupa 4 células \n\n [1] Encouraçado \n    * Ocupa 3 células \n\n [2] cruzadores \n    * Ocupa 2 células.\n\n");
     printf("Ao posicionar, informe as extremidades, ex: A0 A3 (coluna letra A-J + linha 0-9)\n");
     printf("Navios não podem ficar adjacentes (incluindo diagonais).\n");
     pause_enter();
