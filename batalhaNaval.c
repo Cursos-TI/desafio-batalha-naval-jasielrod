@@ -46,7 +46,7 @@ void print_coords_top(){
     int j;
     printf("   ");
     for(j=0;j<N;j++){
-        printf(" %c ", 'A'+j);
+        printf(" %c", 'a'+j);
     }
     printf("   ");
 }
@@ -63,7 +63,7 @@ void print_two_boards(Board *b1, Board *b2, int reveal_b2){
 
     print_coords_top();
   
-    printf("     ");
+    printf("   ");
     print_coords_top();
     printf("\n");
 
