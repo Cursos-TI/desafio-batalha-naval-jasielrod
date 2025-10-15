@@ -2,9 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <iostream>
-using namespace std;
-
 
 #define N 10
 
@@ -505,33 +502,19 @@ void game_loop(){
 
 void show_main_menu(){
     clear_screen();
-
-    printf("/n/n██████╗  █████╗ ████████╗ █████╗ ██╗      ██╗  ██╗ █████╗n");     
-    printf("██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██║      ██║  ██║██╔══██╗n");    
-    printf("██████╔╝███████║   ██║   ███████║██║█████╗███████║███████║n");    
-    printf("██╔═══╝ ██╔══██║   ██║   ██╔══██║██║╚════╝██╔══██║██╔══██║n");    
-    printf("██║     ██║  ██║   ██║   ██║  ██║███████╗ ██║  ██║██║  ██║n");    
-    printf("╚═╝     ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚══════╝ ╚═╝  ╚═╝╚═╝  ╚═╝n");    
-    printf("                                      n");  
-    printf("███╗   ██╗ █████╗ ██╗   ██╗ █████╗ ██╗n");     
-    printf("████╗  ██║██╔══██╗██║   ██║██╔══██╗██║n");     
-    printf("██╔██╗ ██║███████║██║   ██║███████║██║n");     
-    printf("██║╚██╗██║██╔══██║╚██╗ ██╔╝██╔══██║██║n");     
-    printf("██║ ╚████║██║  ██║ ╚████╔╝ ██║  ██║███████╗n");
-    printf("╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝\n\n\n");
- 
+    printf("=========================================\n");
+    printf("        B A T A L H A   N A V A L\n");
     printf("=========================================\n\n");
     printf(" 1 - COMECAR\n");
     printf(" 2 - TUTORIAL (COMO JOGAR)\n");
     printf(" 3 - SAIR\n\n");
     printf("OPCAO: ");
-    printf("=========================================\n\n");
 }
 
 void show_records(){
     clear_screen();
     printf("=== Registros / Como posicionar ===\n\n");
-    printf("Os navios são: 1 Porta-Avião (4), 1 Encouraçado (3), 2 Cruzadores (2).\n");
+    printf("Os navios são: 1 Porta-Avião (4), 1 Encouraçado (3), 2 cruzadores (2).\n");
     printf("Ao posicionar, informe as extremidades, ex: A0 A3 (coluna letra A-J + linha 0-9)\n");
     printf("Navios não podem ficar adjacentes (incluindo diagonais).\n");
     pause_enter();
