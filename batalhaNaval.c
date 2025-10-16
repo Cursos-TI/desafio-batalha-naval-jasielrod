@@ -521,12 +521,13 @@ void show_main_menu(){
     printf("	██║ ╚████║██║  ██║ ╚████╔╝ ██║  ██║███████╗\n");
     printf("	╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝\n\n\n\n");
 
-    printf("~~~~~ ~ ~ ~~~~~~ ~ ~ ~~~~~~~ ~ ~ ~~~~~~~\n");
-    printf("   J O G O  B A T A L H A   N A V A L\n");
-    printf("~~~ ~ ~ ~~~~~~~ ~ ~ ~~~~~~~ ~ ~ ~~~~~~~~\n\n");
-    printf(" 1 - COMECAR\n");
-    printf(" 2 - TUTORIAL (COMO JOGAR)\n");
-    printf(" 3 - SAIR\n\n");
+    printf("╔════════════════════════════════╗\n");
+    printf("║▒▒▒▒▒▒ JOGO BATALHA NAVAL  ▒▒▒▒▒║\n");
+    printf("╠════════════════════════════════╣\n");
+    printf("║ ■ ( 1 ) INICIAR JOGO           ║\n");
+    printf("║ ■ ( 2 ) TUTORIAL (COMO JOGAR)  ║\n");
+    printf("║ ■ ( 3 ) SAIR                   ║\n");
+    printf("╚════════════════════════════════╝\n \n \n");  
     printf("OPCAO >> ");
 }
 
